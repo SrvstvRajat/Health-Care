@@ -91,7 +91,7 @@ export class App extends Component {
 					    <main>
 					      <div className="jumbotron">
 					        <div className="container">  
-					          <h1>Welcome to e-Health</h1>
+					          <h1>Welcome to HealthCare</h1>
 					            <div className="home">
 					    		    <div className="container">
 					    		    	<div className="imagecontainer">

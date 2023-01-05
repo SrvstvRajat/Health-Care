@@ -27,7 +27,6 @@ main {
 }
 
 main h1 {
-  color: lightyellow;
   font-family: 'Raleway', sans-serif;
   font-weight: 600;
   font-size: 70px;
@@ -48,11 +47,12 @@ main h1 {
 
 .jumbotron {
   height: 800px;
-  background-image: url("./Images/homeBack.jpg");
+  background-image: url("./Images/doctor-medical-background-24834402.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .home{
