@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-// const cors = require('cors');
+const cors = require('cors');
 const mongoose = require('mongoose') 
 const http = require('http');
 const https = require('https');
@@ -116,6 +116,7 @@ app.post('/patient_auth', async (req, result, next) => {
         const creds = req.body;
         const uemail = creds.username.trim();
         const pw = creds.password;
+        console.log(uemail,pw);
         const query = {emailId : uemail.toLowerCase()};
         let password = " ";
         let outData={};
