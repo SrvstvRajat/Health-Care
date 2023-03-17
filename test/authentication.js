@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const cors = require('cors');
+// const cors = require('cors');
 const http = require('http');
 const https = require('https');
 const PORT = process.env.PORT || 9000;
@@ -10,7 +10,7 @@ app = express();
 //Configuring server
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(cors());
+// app.use(cors());
 
 app.get('/',(req,res)=>{
 	res.send(Math.random().toString(36).substr(2, 9));
@@ -23,7 +23,7 @@ app.post('/patient_auth', async (req, result, next) => {
 	const query = {emailId : uemail};
 	let password = " ";
 	let outData={};
-	await MongoClient.connect("mongodb+srv://dhruvil:[PASSWORD]@cluster0-8obxb.mongodb.net/test?retryWrites=true", {useNewUrlParser:true},
+	await MongoClient.connect("mongodb+srv://admin-rupal:Rupal123@cluster0.lq3fq.mongodb.net/devcart?retryWrites=true&w=majority", {useNewUrlParser:true},
  function(err, db) {
 		if (err) throw err;
 	        let dbo = db.db("medical");
@@ -58,7 +58,7 @@ app.post('/patient_id', async(req,result,next)=>{
 	const patient_id = req.body.emailId;
 	const query = {'emailId':patient_id};
 	console.log(query);
-	await MongoClient.connect("mongodb+srv://dhruvil:[PASSWORD]@cluster0-8obxb.mongodb.net/test?retryWrites=true", {useNewUrlParser:true},
+	await MongoClient.connect("mongodb+srv://admin-rupal:Rupal123@cluster0.lq3fq.mongodb.net/devcart?retryWrites=true&w=majority", {useNewUrlParser:true},
  function(err, db) {
 		if (err) throw err;
 	        let dbo = db.db("medical");
@@ -83,7 +83,7 @@ app.post('/doctor_auth', async (req, result, next) => {
 	const query = {emailId : uemail};
 	let password = " ";
 	let outData = {};
-	await MongoClient.connect("mongodb+srv://dhruvil:[PASSWORD]@cluster0-8obxb.mongodb.net/test?retryWrites=true", {useNewUrlParser:true},
+	await MongoClient.connect("mongodb+srv://admin-rupal:Rupal123@cluster0.lq3fq.mongodb.net/devcart?retryWrites=true&w=majority", {useNewUrlParser:true},
  function(err, db) {
 		if (err) throw err;
 	        let dbo = db.db("medical");
@@ -113,7 +113,7 @@ app.post('/insert_doctor',(req,result)=>{
 	const password = req.body.password;
 	const emailId = req.body.emailId;
 	doctor_data = {"username":username, "emailId":emailId, "password":password};
-	MongoClient.connect("mongodb+srv://dhruvil:[PASSWORD]@cluster0-8obxb.mongodb.net/test?retryWrites=true", {useNewUrlParser:true},
+	MongoClient.connect("mongodb+srv://admin-rupal:Rupal123@cluster0.lq3fq.mongodb.net/devcart?retryWrites=true&w=majority", {useNewUrlParser:true},
 function(err, db) {
 	    if (err) throw err;
 	    let dbo = db.db("medical");
@@ -141,7 +141,7 @@ app.post('/insert_patient',(req,result)=>{
 	const password = req.body.password;
 	const emailId = req.body.emailId;
 	patient_data = {"username":username, "emailId":emailId, "password":password};
-	MongoClient.connect("mongodb+srv://dhruvil:[PASSWORD]@cluster0-8obxb.mongodb.net/test?retryWrites=true", {useNewUrlParser:true},
+	MongoClient.connect("mongodb+srv://admin-rupal:Rupal123@cluster0.lq3fq.mongodb.net/devcart?retryWrites=true&w=majority", {useNewUrlParser:true},
 function(err, db) {
 	    if (err) throw err;
 	    let dbo = db.db("medical");
