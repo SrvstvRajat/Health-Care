@@ -14,7 +14,7 @@ export class Doctor extends Component {
             doctor_id:this.props.id,
             doctor_name:this.props.name,
             patient_id:'',
-            patient_email:'dhruvil123@gmail.com',
+            patient_email:'rupal@gmail.com',
             view0:false,
             view1:false,
             add: true,
